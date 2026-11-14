@@ -18,5 +18,84 @@
       <specular>0.1 0.1 0.1 1</specular>
       <direction>-0.3 0.2 -1</direction>
     </light>
+    <model name="piscine">
+	    <static>true</static> 
+	<link name = "floor">
+		<pose>0 0 -2.1 0 0 0</pose>
+
+	<collision name="collision">
+		<geometry>
+			<box><size>8.4 8.4 0.2</size></box>
+		</geometry>
+	</collision>
+
+	<visual name ="visual">
+		<geometry>
+			<box><size>8.4 8.4 0.2</size></box>
+		</geometry>
+			<material>
+				<ambient>0.3 0.45 0.55</ambient>
+				<diffuse>0.3 0.45 0.55</diffuse>
+			</material>
+	</visual>
+	</link>
+	<link name="north_wall">
+		<pose>0 4.1 -1 0 0 0</pose>
+		<collision name="collision">
+			<geometry><box><size>8.4 0.2 2</size></box></geometry>
+		</collision>
+		<visual name = "visual">
+			<geometry><box><size>8.4 0.2 2</size></box></geometry>		
+			<material>
+				<ambient>0.75 0.75 0.78 1 </ambient>
+				<diffuse>0.75 0.75 0.78 1 </diffuse>
+			</material>
+		</visual>
+	</link>
+	        <link name="south_wall">
+                <pose>0 -4.1 -1 0 0 0</pose>
+                <collision name="collision">
+                        <geometry><box><size>8.4 0.2 2</size></box></geometry>
+                </collision>
+                <visual name = "visual">
+                        <geometry><box><size>8.4 0.2 2</size></box></geometry>
+                        <material>
+                                <ambient>0.75 0.75 0.78 1 </ambient>
+                                <diffuse>0.75 0.75 0.78 1 </diffuse>
+                        </material>
+                </visual>
+        </link>
+
+	        <link name="east_wall">
+                <pose>4.1 0 -1 0 0 0</pose>
+                <collision name="collision">
+                        <geometry><box><size>0.2 8 2</size></box></geometry>
+                </collision>
+                <visual name = "visual">
+                        <geometry><box><size>0.2 8 2</size></box></geometry>
+                        <material>
+                                <ambient>0.75 0.75 0.78 1 </ambient>
+                                <diffuse>0.75 0.75 0.78 1 </diffuse>
+                        </material>
+                </visual>
+	</link>
+
+	        <link name="west_wall">
+                <pose>-4.1 0 -1 0 0 0</pose>
+                <collision name="collision">
+                        <geometry><box><size>0.2 8 2</size></box></geometry>
+                </collision>
+                <visual name = "visual">
+                        <geometry><box><size>0.2 8 2</size></box></geometry>
+                        <material>
+                                <ambient>0.75 0.75 0.78 1 </ambient>
+                                <diffuse>0.75 0.75 0.78 1 </diffuse>
+                        </material>
+                </visual>
+        </link>
+
+	</model>
+			
+
   </world>
 </sdf>
