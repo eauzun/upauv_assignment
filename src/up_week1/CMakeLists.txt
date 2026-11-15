@@ -12,7 +12,13 @@ add_executable(heartbeat_publisher
   code/Publisher/HeartbeatPublisher.cpp)
 ament_target_dependencies(heartbeat_publisher rclcpp std_msgs)
 
-install(TARGETS heartbeat_publisher DESTINATION lib/${PROJECT_NAME})
+add_executable(heartbeat_subscriber
+  code/Subscriber/main.cpp
+  code/Subscriber/HeartbeatSubscriber.cpp)
+ament_target_dependencies(heartbeat_subscriber rclcpp std_msgs)
+
+install(TARGETS heartbeat_publisher heartbeat_subscriber
+  DESTINATION lib/${PROJECT_NAME})
 install(DIRECTORY worlds DESTINATION share/${PROJECT_NAME})
 
 ament_package()
