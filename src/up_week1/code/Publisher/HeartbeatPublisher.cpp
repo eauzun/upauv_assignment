@@ -3,6 +3,7 @@
 HeartbeatPublisher::HeartbeatPublisher(void)
 	: rclcpp::Node("heartbeat_publisher"), _seq(0)
 {
+	this->_pub = this->create_publisher<std_msgs::msg::String>("/up/heartbeat", 10);
 	this->_timer = this->create_wall_timer(
 		std::chrono::seconds(1),
 		std::bind(&HeartbeatPublisher::_onTimer, this));
@@ -27,6 +28,10 @@ HeartbeatPublisher::~HeartbeatPublisher(void)
 
 void	HeartbeatPublisher::_onTimer(void)
 {
-	RCLCPP_INFO(this->get_logger(), "tick %lu", this->_seq);
+	std_msgs::msg::String	msg;
+
+	msg.data = "Emirali heartbeat #" + std::to_string(this->_seq);
+	this->_pub->publish(msg);
+	RCLCPP_INFO(this->get_logger(), "published: %s", msg.data.c_str());
 	this->_seq++;
 }
