@@ -1,0 +1,10 @@
+/upauv_assignment/build/up_week1/CMakeFiles/uninstall.dir
+/upauv_assignment/build/up_week1/CMakeFiles/up_week1_uninstall.dir
+/upauv_assignment/build/up_week1/CMakeFiles/heartbeat_publisher.dir
+/upauv_assignment/build/up_week1/CMakeFiles/test.dir
+/upauv_assignment/build/up_week1/CMakeFiles/edit_cache.dir
+/upauv_assignment/build/up_week1/CMakeFiles/rebuild_cache.dir
+/upauv_assignment/build/up_week1/CMakeFiles/list_install_components.dir
+/upauv_assignment/build/up_week1/CMakeFiles/install.dir
+/upauv_assignment/build/up_week1/CMakeFiles/install/local.dir
+/upauv_assignment/build/up_week1/CMakeFiles/install/strip.dir

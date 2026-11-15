@@ -3,6 +3,9 @@
 HeartbeatPublisher::HeartbeatPublisher(void)
 	: rclcpp::Node("heartbeat_publisher"), _seq(0)
 {
+	this->_timer = this->create_wall_timer(
+		std::chrono::seconds(1),
+		std::bind(&HeartbeatPublisher::_onTimer, this));
 	RCLCPP_INFO(this->get_logger(), "heartbeat_publisher started");
 }
 
@@ -20,4 +23,10 @@ HeartbeatPublisher	&HeartbeatPublisher::operator=(const HeartbeatPublisher &othe
 
 HeartbeatPublisher::~HeartbeatPublisher(void)
 {
+}
+
+void	HeartbeatPublisher::_onTimer(void)
+{
+	RCLCPP_INFO(this->get_logger(), "tick %lu", this->_seq);
+	this->_seq++;
 }

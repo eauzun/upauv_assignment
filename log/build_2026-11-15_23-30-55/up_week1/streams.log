@@ -1,0 +1,28 @@
+[0.016s] Invoking command in '/upauv_assignment/build/up_week1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /upauv_assignment/build/up_week1 -- -j12 -l12
+[0.058s] [35m[1mConsolidate compiler generated dependencies of target heartbeat_publisher[0m
+[0.080s] [ 66%] [32mBuilding CXX object CMakeFiles/heartbeat_publisher.dir/code/Publisher/main.cpp.o[0m
+[0.080s] [ 66%] [32mBuilding CXX object CMakeFiles/heartbeat_publisher.dir/code/Publisher/HeartbeatPublisher.cpp.o[0m
+[2.637s] [100%] [32m[1mLinking CXX executable heartbeat_publisher[0m
+[2.742s] [100%] Built target heartbeat_publisher
+[2.753s] Invoked command in '/upauv_assignment/build/up_week1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /upauv_assignment/build/up_week1 -- -j12 -l12
+[2.764s] Invoking command in '/upauv_assignment/build/up_week1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /upauv_assignment/build/up_week1
+[2.770s] -- Install configuration: ""
+[2.770s] -- Execute custom install script
+[2.770s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/lib/up_week1/heartbeat_publisher
+[2.771s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/worlds/test_world.sdf
+[2.771s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/ament_index/resource_index/package_run_dependencies/up_week1
+[2.771s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/ament_index/resource_index/parent_prefix_path/up_week1
+[2.771s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/environment/ament_prefix_path.sh
+[2.771s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/environment/ament_prefix_path.dsv
+[2.772s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/environment/path.sh
+[2.772s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/environment/path.dsv
+[2.772s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/local_setup.bash
+[2.772s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/local_setup.sh
+[2.772s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/local_setup.zsh
+[2.772s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/local_setup.dsv
+[2.772s] -- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/package.dsv
+[2.781s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/ament_index/resource_index/packages/up_week1
+[2.781s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/cmake/up_week1Config.cmake
+[2.781s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/cmake/up_week1Config-version.cmake
+[2.782s] -- Up-to-date symlink: /upauv_assignment/install/up_week1/share/up_week1/package.xml
+[2.784s] Invoked command in '/upauv_assignment/build/up_week1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /upauv_assignment/build/up_week1

@@ -14,6 +14,7 @@ class HeartbeatPublisher : public rclcpp::Node
 		~HeartbeatPublisher(void);
 
 	private:
+		void												_onTimer(void);
 		rclcpp::Publisher<std_msgs::msg::String>::SharedPtr	_pub;
 		rclcpp::TimerBase::SharedPtr						_timer;
 		unsigned long										_seq;

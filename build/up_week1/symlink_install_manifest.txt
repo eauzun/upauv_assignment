@@ -1,0 +1,17 @@
+/upauv_assignment/install/up_week1/lib/up_week1/heartbeat_publisher
+/upauv_assignment/install/up_week1/share/up_week1/worlds/test_world.sdf
+/upauv_assignment/install/up_week1/share/ament_index/resource_index/package_run_dependencies/up_week1
+/upauv_assignment/install/up_week1/share/ament_index/resource_index/parent_prefix_path/up_week1
+/upauv_assignment/install/up_week1/share/up_week1/environment/ament_prefix_path.sh
+/upauv_assignment/install/up_week1/share/up_week1/environment/ament_prefix_path.dsv
+/upauv_assignment/install/up_week1/share/up_week1/environment/path.sh
+/upauv_assignment/install/up_week1/share/up_week1/environment/path.dsv
+/upauv_assignment/install/up_week1/share/up_week1/local_setup.bash
+/upauv_assignment/install/up_week1/share/up_week1/local_setup.sh
+/upauv_assignment/install/up_week1/share/up_week1/local_setup.zsh
+/upauv_assignment/install/up_week1/share/up_week1/local_setup.dsv
+/upauv_assignment/install/up_week1/share/up_week1/package.dsv
+/upauv_assignment/install/up_week1/share/ament_index/resource_index/packages/up_week1
+/upauv_assignment/install/up_week1/share/up_week1/cmake/up_week1Config.cmake
+/upauv_assignment/install/up_week1/share/up_week1/cmake/up_week1Config-version.cmake
+/upauv_assignment/install/up_week1/share/up_week1/package.xml

@@ -1,0 +1,110 @@
+[0.000000] (-) TimerEvent: {}
+[0.000507] (up_week1) JobQueued: {'identifier': 'up_week1', 'dependencies': OrderedDict()}
+[0.000540] (up_week1) JobStarted: {'identifier': 'up_week1'}
+[0.010652] (up_week1) JobProgress: {'identifier': 'up_week1', 'progress': 'cmake'}
+[0.011414] (up_week1) Command: {'cmd': ['/usr/bin/cmake', '/upauv_assignment/src/up_week1', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/upauv_assignment/install/up_week1'], 'cwd': '/upauv_assignment/build/up_week1', 'env': OrderedDict([('HOSTNAME', 'MSI'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/upauv_assignment/src/up_week1'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/upauv_assignment/install:/upauv_assignment/src/up_week1/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('XAUTHORITY', '/tmp/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/upauv_assignment/src/up_week1/install/up_week1:/upauv_assignment/install/up_week1:/opt/ros/humble'), ('PWD', '/upauv_assignment/build/up_week1'), ('QT_QPA_PLATFORM', 'xcb'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/upauv_assignment/src/up_week1/install/up_week1:/upauv_assignment/install/up_week1:/opt/ros/humble')]), 'shell': False}
+[0.066450] (up_week1) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099840] (-) TimerEvent: {}
+[0.125002] (up_week1) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.134189] (up_week1) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199942] (-) TimerEvent: {}
+[0.203034] (up_week1) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.210066] (up_week1) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.210264] (up_week1) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.210623] (up_week1) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.213382] (up_week1) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.290307] (up_week1) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.298574] (up_week1) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.298833] (up_week1) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.299283] (up_week1) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.299991] (-) TimerEvent: {}
+[0.303113] (up_week1) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.400083] (-) TimerEvent: {}
+[0.436903] (up_week1) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.491889] (up_week1) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.500146] (-) TimerEvent: {}
+[0.530106] (up_week1) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.579978] (up_week1) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.587746] (up_week1) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.597367] (up_week1) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.600183] (-) TimerEvent: {}
+[0.612625] (up_week1) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.631831] (up_week1) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.681682] (up_week1) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.685362] (up_week1) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.700316] (-) TimerEvent: {}
+[0.791214] (up_week1) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.800413] (-) TimerEvent: {}
+[0.826491] (up_week1) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.882665] (up_week1) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.896026] (up_week1) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.900478] (-) TimerEvent: {}
+[0.972524] (up_week1) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.973341] (up_week1) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.000593] (-) TimerEvent: {}
+[1.048286] (up_week1) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.049299] (up_week1) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.100683] (-) TimerEvent: {}
+[1.166221] (up_week1) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.178534] (up_week1) StdoutLine: {'line': b'-- Generating done\n'}
+[1.181885] (up_week1) StdoutLine: {'line': b'-- Build files have been written to: /upauv_assignment/build/up_week1\n'}
+[1.189689] (up_week1) CommandEnded: {'returncode': 0}
+[1.190150] (up_week1) JobProgress: {'identifier': 'up_week1', 'progress': 'build'}
+[1.190972] (up_week1) Command: {'cmd': ['/usr/bin/cmake', '--build', '/upauv_assignment/build/up_week1', '--', '-j12', '-l12'], 'cwd': '/upauv_assignment/build/up_week1', 'env': OrderedDict([('HOSTNAME', 'MSI'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/upauv_assignment/src/up_week1'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/upauv_assignment/install:/upauv_assignment/src/up_week1/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('XAUTHORITY', '/tmp/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/upauv_assignment/src/up_week1/install/up_week1:/upauv_assignment/install/up_week1:/opt/ros/humble'), ('PWD', '/upauv_assignment/build/up_week1'), ('QT_QPA_PLATFORM', 'xcb'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/upauv_assignment/src/up_week1/install/up_week1:/upauv_assignment/install/up_week1:/opt/ros/humble')]), 'shell': False}
+[1.200776] (-) TimerEvent: {}
+[1.244110] (up_week1) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/heartbeat_publisher.dir/code/Publisher/main.cpp.o\x1b[0m\n'}
+[1.244376] (up_week1) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/heartbeat_publisher.dir/code/Publisher/HeartbeatPublisher.cpp.o\x1b[0m\n'}
+[1.300879] (-) TimerEvent: {}
+[1.401175] (-) TimerEvent: {}
+[1.501476] (-) TimerEvent: {}
+[1.601783] (-) TimerEvent: {}
+[1.702110] (-) TimerEvent: {}
+[1.802440] (-) TimerEvent: {}
+[1.902778] (-) TimerEvent: {}
+[2.003127] (-) TimerEvent: {}
+[2.103449] (-) TimerEvent: {}
+[2.203748] (-) TimerEvent: {}
+[2.304064] (-) TimerEvent: {}
+[2.404476] (-) TimerEvent: {}
+[2.504807] (-) TimerEvent: {}
+[2.605144] (-) TimerEvent: {}
+[2.705492] (-) TimerEvent: {}
+[2.805836] (-) TimerEvent: {}
+[2.906156] (-) TimerEvent: {}
+[3.006495] (-) TimerEvent: {}
+[3.106810] (-) TimerEvent: {}
+[3.207153] (-) TimerEvent: {}
+[3.307464] (-) TimerEvent: {}
+[3.407762] (-) TimerEvent: {}
+[3.508076] (-) TimerEvent: {}
+[3.608380] (-) TimerEvent: {}
+[3.652205] (up_week1) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable heartbeat_publisher\x1b[0m\n'}
+[3.708486] (-) TimerEvent: {}
+[3.751581] (up_week1) StdoutLine: {'line': b'[100%] Built target heartbeat_publisher\n'}
+[3.764007] (up_week1) CommandEnded: {'returncode': 0}
+[3.764494] (up_week1) JobProgress: {'identifier': 'up_week1', 'progress': 'install'}
+[3.773337] (up_week1) Command: {'cmd': ['/usr/bin/cmake', '--install', '/upauv_assignment/build/up_week1'], 'cwd': '/upauv_assignment/build/up_week1', 'env': OrderedDict([('HOSTNAME', 'MSI'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/upauv_assignment/src/up_week1'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/upauv_assignment/install:/upauv_assignment/src/up_week1/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('XAUTHORITY', '/tmp/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/upauv_assignment/src/up_week1/install/up_week1:/upauv_assignment/install/up_week1:/opt/ros/humble'), ('PWD', '/upauv_assignment/build/up_week1'), ('QT_QPA_PLATFORM', 'xcb'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/upauv_assignment/src/up_week1/install/up_week1:/upauv_assignment/install/up_week1:/opt/ros/humble')]), 'shell': False}
+[3.781308] (up_week1) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.781841] (up_week1) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[3.782295] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/lib/up_week1/heartbeat_publisher\n'}
+[3.793031] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/worlds/test_world.sdf\n'}
+[3.801138] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/ament_index/resource_index/package_run_dependencies/up_week1\n'}
+[3.808565] (-) TimerEvent: {}
+[3.809033] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/ament_index/resource_index/parent_prefix_path/up_week1\n'}
+[3.818771] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/environment/ament_prefix_path.sh\n'}
+[3.826463] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/environment/ament_prefix_path.dsv\n'}
+[3.836051] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/environment/path.sh\n'}
+[3.843668] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/environment/path.dsv\n'}
+[3.855287] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/local_setup.bash\n'}
+[3.867767] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/local_setup.sh\n'}
+[3.878973] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/local_setup.zsh\n'}
+[3.887117] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/local_setup.dsv\n'}
+[3.894951] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/package.dsv\n'}
+[3.903348] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/ament_index/resource_index/packages/up_week1\n'}
+[3.908666] (-) TimerEvent: {}
+[3.911661] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/cmake/up_week1Config.cmake\n'}
+[3.919788] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/cmake/up_week1Config-version.cmake\n'}
+[3.927370] (up_week1) StdoutLine: {'line': b'-- Symlinking: /upauv_assignment/install/up_week1/share/up_week1/package.xml\n'}
+[3.941780] (up_week1) CommandEnded: {'returncode': 0}
+[3.959883] (up_week1) JobEnded: {'identifier': 'up_week1', 'rc': 0}
+[3.960449] (-) EventReactorShutdown: {}
