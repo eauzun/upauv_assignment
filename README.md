@@ -11,10 +11,10 @@ Under Pressure AUV Team — Week 1 Software Assignment (ROS 2 Humble & Gazebo Fo
 ## Build & Run
 ```bash
 # Clone into workspace and build
-git clone <repo-url>
+git clone git@github.com:eauzun/upauv_assignment.git
 cd upauv_assignment
 source /opt/ros/humble/setup.bash
-colcon build --packages-select up_week1
+colcon build --symlink-install
 source install/setup.bash
 
 # Launch simulation, bridge, and all nodes
