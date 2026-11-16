@@ -25,6 +25,6 @@ ament_target_dependencies(camera_monitor rclcpp sensor_msgs)
 
 install(TARGETS heartbeat_publisher heartbeat_subscriber camera_monitor
   DESTINATION lib/${PROJECT_NAME})
-install(DIRECTORY worlds DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY worlds launch DESTINATION share/${PROJECT_NAME})
 
 ament_package()
