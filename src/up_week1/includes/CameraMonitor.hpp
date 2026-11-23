@@ -14,14 +14,15 @@ class CameraMonitor : public rclcpp::Node
 		~CameraMonitor(void);
 
 	private:
-		void													_onImage(const sensor_msgs::msg::Image::SharedPtr msg);
-		void													_onTimer(void);
+		void														_onImage(const sensor_msgs::msg::Image::SharedPtr msg);
+		void														_onTimer(void);
 		rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr	_sub;
-		rclcpp::TimerBase::SharedPtr							_timer;
-		unsigned long											_count;
-		unsigned int											_width;
-		unsigned int											_height;
-		std::string												_encoding;
+		rclcpp::TimerBase::SharedPtr								_timer;
+		unsigned long												_count;
+		unsigned long												_lastCount;
+		unsigned int												_width;
+		unsigned int												_height;
+		std::string													_encoding;
 };
 
 #endif
