@@ -1,15 +1,22 @@
+#include <chrono>
 #include <cmath>
+#include <functional>
 #include <stdexcept>
 #include "TargetMover.hpp"
 
 TargetMover::TargetMover(void)
 	: rclcpp::Node("target_mover"), _updateRate(20.0), _loop(true),
-	_cycleTime(0.0), _startSec(0.0), _started(false)
+	_cycleTime(0.0), _startSec(0.0), _started(false), _lastLogSec(0.0)
 {
 	this->_loadParams();
 	if (!this->_validatePath())
 		throw std::runtime_error("invalid target path configuration");
 	this->_logPath();
+	this->_gtPub = this->create_publisher<geometry_msgs::msg::PointStamped>(
+		"/target_mover/ground_truth", 10);
+	this->_timer = this->create_wall_timer(
+		std::chrono::duration<double>(1.0 / this->_updateRate),
+		std::bind(&TargetMover::_onTimer, this));
 	RCLCPP_INFO(this->get_logger(), "target_mover started");
 }
 
@@ -17,7 +24,8 @@ TargetMover::TargetMover(const TargetMover &other)
 	: rclcpp::Node("target_mover"), _modelName(other._modelName),
 	_worldName(other._worldName), _updateRate(other._updateRate),
 	_loop(other._loop), _path(other._path), _cycleTime(other._cycleTime),
-	_startSec(other._startSec), _started(other._started)
+	_startSec(other._startSec), _started(other._started),
+	_lastLogSec(other._lastLogSec)
 {
 }
 
@@ -33,6 +41,7 @@ TargetMover	&TargetMover::operator=(const TargetMover &other)
 		this->_cycleTime = other._cycleTime;
 		this->_startSec = other._startSec;
 		this->_started = other._started;
+		this->_lastLogSec = other._lastLogSec;
 	}
 	return (*this);
 }
@@ -150,6 +159,94 @@ void	TargetMover::_logPath(void) const
 	RCLCPP_INFO(this->get_logger(), "cycle time: %.1f s", this->_cycleTime);
 }
 
+TargetMover::State	TargetMover::_makeState(size_t i, bool moving, double s) const
+{
+	State	st;
+	size_t	from;
+
+	from = (moving && i > 0) ? i - 1 : i;
+	st.stage = i;
+	st.moving = moving;
+	st.x = this->_path[from].x + (this->_path[i].x - this->_path[from].x) * s;
+	st.y = this->_path[from].y + (this->_path[i].y - this->_path[from].y) * s;
+	st.z = this->_path[from].z + (this->_path[i].z - this->_path[from].z) * s;
+	return (st);
+}
+
+TargetMover::State	TargetMover::_stateAt(double t) const
+{
+	double	acc;
+	size_t	i;
+
+	if (this->_loop)
+		t = std::fmod(t, this->_cycleTime);
+	acc = this->_path[0].holdTime;
+	if (t < acc)
+		return (this->_makeState(0, false, 0.0));
+	i = 1;
+	while (i < this->_path.size())
+	{
+		if (t < acc + this->_path[i].moveTime)
+			return (this->_makeState(i, true, (t - acc) / this->_path[i].moveTime));
+		acc += this->_path[i].moveTime;
+		if (t < acc + this->_path[i].holdTime)
+			return (this->_makeState(i, false, 0.0));
+		acc += this->_path[i].holdTime;
+		i++;
+	}
+	return (this->_makeState(this->_path.size() - 1, false, 0.0));
+}
+
 void	TargetMover::_onTimer(void)
 {
+	double	now;
+	double	t;
+	State	st;
+
+	now = this->get_clock()->now().seconds();
+	if (!this->_started)
+	{
+		if (now <= 0.0)
+			return ;
+		this->_startSec = now;
+		this->_lastLogSec = now - 1.0;
+		this->_started = true;
+	}
+	t = now - this->_startSec;
+	st = this->_stateAt(t);
+	this->_sendPose(st);
+	if (now - this->_lastLogSec >= 1.0)
+	{
+		this->_lastLogSec = now;
+		RCLCPP_INFO(this->get_logger(),
+			"t=%5.1f stage=%zu %-14s %s pos=(%.2f, %.2f, %.2f)",
+			t, st.stage, this->_path[st.stage].label.c_str(),
+			st.moving ? "moving " : "holding", st.x, st.y, st.z);
+	}
+}
+
+void	TargetMover::_onReply(const ignition::msgs::Boolean &rep, const bool result)
+{
+	(void)rep;
+	(void)result;
+}
+
+void	TargetMover::_sendPose(const State &st)
+{
+	ignition::msgs::Pose				req;
+	geometry_msgs::msg::PointStamped	gt;
+
+	req.set_name(this->_modelName);
+	req.mutable_position()->set_x(st.x);
+	req.mutable_position()->set_y(st.y);
+	req.mutable_position()->set_z(st.z);
+	req.mutable_orientation()->set_w(1.0);
+	this->_gz.Request("/world/" + this->_worldName + "/set_pose",
+		req, &TargetMover::_onReply, this);
+	gt.header.stamp = this->get_clock()->now();
+	gt.header.frame_id = "world";
+	gt.point.x = st.x;
+	gt.point.y = st.y;
+	gt.point.z = st.z;
+	this->_gtPub->publish(gt);
 }
