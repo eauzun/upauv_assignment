@@ -1,0 +1,15 @@
+red_target_detector:
+  ros__parameters:
+    h1_low: 0
+    h1_high: 6
+    h2_low: 174
+    h2_high: 180
+    s_min: 120
+    v_min: 70
+    min_area: 80.0
+    max_area_ratio: 0.5
+    morph_kernel: 3
+    confirm_frames: 3
+    lost_frames: 5
+    stream_timeout: 1.0
+    publish_debug: true
