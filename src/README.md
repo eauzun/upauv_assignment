@@ -173,31 +173,46 @@ Loaded from `config/detector.yaml` (or `detector_dim.yaml`) and changeable at ru
 4. Find external contours; keep those with `min_area ≤ area ≤ max_area_ratio × image area`.
 5. Sort candidates by area (descending); the largest is the target.
 6. Debounce: `confirm_frames` consecutive hits set `target_detected` true, `lost_frames` consecutive misses set it false, so a single noisy frame does not change the state.
-7. Publish detections, flag, offset (only when a candidate exists) and debug image.
+7. Publish detections, flag, offset (only when a candidate exists) and debug image. Stale boxes are never re-published after the target disappears.
 8. A watchdog sets `target_detected` false if no image arrives for `stream_timeout` seconds; processing resumes by itself when the stream returns. Empty or corrupt images are ignored.
 
-The node logs once per second: processed frames, detection state, center (px), area and average processing time (ms).
+The node logs once per second: processed frames, detection state, center (px), area and average processing time (ms, about 2 ms in practice).
 
 ### Target path
 
-Defined in `config/target_path.yaml` (waypoints with `move_time` and `hold_time`), repeated identically every run. Positions are in world coordinates.
+Defined in `config/target_path.yaml` (waypoints with `move_time` and `hold_time`), repeated identically every run. Total cycle time: 37 s (20 s moving + 17 s holding). The last waypoint equals the first, so the loop is seamless. All waypoints are at z = -1.3.
 
-TODO: paste the table from `target_path.yaml` (label, x, y, z, move_time, hold_time) and the total cycle time. The path must contain: hold in view (≥ 5 s), displacement ≥ 1 m in view, occlusion behind the pillar, out of view (≥ 3 s), re-entry.
+| # | Label | x (m) | y (m) | move_time (s) | hold_time (s) | Purpose |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | `start_hold` | 0.0 | 0.0 | 0 | 6 | Stationary in view (≥ 5 s) |
+| 1 | `move_right` | 1.0 | 0.0 | 4 | 2 | 1 m displacement in view |
+| 2 | `partial_cover` | -0.55 | 0.0 | 5 | 2 | Partially hidden by the pillar |
+| 3 | `full_cover` | -0.95 | 0.0 | 2 | 3 | Fully hidden by the pillar |
+| 4 | `out_of_view` | -2.3 | 0.0 | 4 | 4 | Outside the camera view (≥ 3 s) |
+| 5 | `reenter` | 0.0 | 0.0 | 5 | 0 | Re-entry into view, back to start |
 
 Scene objects: red target (`red_target`), blue sphere `object_blue` (clearly different colour distractor), orange cube `object_orange` (near-red distractor), `occlusion_pillar` (cylinder r=0.24, at (-0.65, -1.2)), plus fish and block from Week 1.
 
 ### Evaluation
 
-Ground truth is the target's world position published by the mover, projected into the image with the camera geometry from the SDF. A frame counts as *visible* when the target is fully inside the image and not behind the pillar, and as *invisible* when it is outside the image or centred behind the pillar. Partially occluded frames and the first `settle_frames` (default 4) frames after each visible/invisible change are skipped, because ground truth is asynchronous and the detector is intentionally debounced.
+Ground truth is the target's world position published by the mover, projected into the image with the camera geometry from the SDF. A frame counts as *visible* when the target is fully inside the image and not behind the pillar, and as *invisible* when it is outside the image or centred behind the pillar. Partially occluded frames and the first `settle_frames` (default 4) frames after each visible/invisible change are skipped, because ground truth is asynchronous and the detector is intentionally debounced. 600 frames cover about 1.6 path cycles.
 
 ```bash
 ros2 run up_week2 evaluate.py --ros-args -p lighting:=normal -p frames:=600 -p out_dir:=docs
 ```
 
-| Lighting | Frames | Detection rate (≥ 90 %) | False detection (≤ 5 %) | Mean center error (≤ 10 px) |
+| Run | Frames | Detection rate (≥ 90 %) | False detection (≤ 5 %) | Mean center error (≤ 10 px) |
 | :--- | :--- | :--- | :--- | :--- |
-| normal | TODO | TODO | TODO | TODO |
-| dim | TODO | TODO | TODO | TODO |
+| normal #1 | 600 | 97.2 % | 0.0 % | 0.56 px |
+| normal #2 | 600 | 87.7 % | 0.0 % | 0.57 px |
+| normal #3 | 600 | 90.4 % | 0.0 % | 0.66 px |
+| **normal mean** | | **91.8 %** | **0.0 %** | **0.60 px** |
+| dim #1 | 600 | 84.5 % | 0.0 % | 0.51 px |
+| dim #2 | 600 | 90.2 % | 0.0 % | 0.70 px |
+| dim #3 | 600 | 96.6 % | 0.0 % | 0.46 px |
+| **dim mean** | | **90.4 %** | **0.0 %** | **0.56 px** |
+
+Parameters were recorded with `ros2 param get` before each series (`confirm_frames` 3, `lost_frames` 5; normal: `s_min` 120, `v_min` 70, `min_area` 80; dim: 110, 30, 60). False detection and center error meet the targets in every run. The detection rate meets the 90 % target on average but fluctuates between 84.5 % and 97.2 % across runs with identical parameters (2 of 6 runs below 90 %). Likely cause: `/vision/detections` is only filled after the state is confirmed (`confirm_frames` = 3 frames, about 0.3 s at 10 Hz), so frames right after the target enters the view or leaves the pillar count as misses, and how many of those frames fall into the measurement depends on timing. This was not verified separately.
 
 Distractor check with default parameters: the orange cube is not detected. Raising `h1_high` to 25 makes it a false detection (screenshot in `docs/screenshots/`).
 
@@ -216,7 +231,7 @@ ros2 param set /red_target_detector min_area -5.0         # rejected
 ### Sources and AI assistance
 
 - OpenCV HSV thresholding and contour documentation, ROS 2 Humble and Gazebo Fortress documentation.
-- AI assistance (Claude, Anthropic) was used for code drafts, debugging and the evaluation tool. TODO: list which parts, and confirm you can explain all of them.
+- AI assistance (Claude, Anthropic) was used for the evaluation tool (`eval/evaluate.py`: camera projection and metrics), the HSV thresholding, the morphological operations (opening and closing) and the contour detection steps, as well as for launch structure and debugging (duplicate simulation, stale boxes, measurement thresholds).
 
 </details>
 
