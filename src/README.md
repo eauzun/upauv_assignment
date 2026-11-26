@@ -161,7 +161,7 @@ Loaded from `config/detector.yaml` (or `detector_dim.yaml`) and changeable at ru
 | `max_area_ratio` | double | 0.5 | Largest accepted area as a fraction of the image, in (0, 1] |
 | `morph_kernel` | int | 3 | Odd kernel size (1-31) for opening/closing |
 | `confirm_frames` | int | 3 | Consecutive frames with a candidate needed to set `target_detected` true |
-| `lost_frames` | int | 3 | Consecutive frames without a candidate needed to set it false |
+| `lost_frames` | int | 5 | Consecutive frames without a candidate needed to set it false |
 | `stream_timeout` | double | 1.0 | Seconds without images before the node reports "no target" |
 | `publish_debug` | bool | true | Enables `/vision/debug_image` |
 
