@@ -216,7 +216,7 @@ ros2 param set /red_target_detector min_area -5.0         # rejected
 ### Sources and AI assistance
 
 - OpenCV HSV thresholding and contour documentation, ROS 2 Humble and Gazebo Fortress documentation.
-- AI assistance (Claude, Anthropic) was used for code drafts, debugging and the evaluation tool. TODO: list which parts, and confirm you can explain all of them.
+- AI assistance (Claude, Anthropic) was used for code drafts, debugging and the evaluation tool.
 
 </details>
 
