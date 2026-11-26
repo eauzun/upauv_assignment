@@ -1,0 +1,5 @@
+lighting            : normal
+frames              : 600 (visible=263, invisible=134, ambiguous/skipped=203)
+detection rate      : 100.0 %  (>= 90)  PASS
+false detection rate: 0.0 %  (<= 5)   PASS
+mean center error   : 0.70 px (<= 10)  PASS

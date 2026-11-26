@@ -61,7 +61,7 @@ def classify(p):
     if u < -half or u > W + half or v < -half or v > H + half:
         return 'invisible', pr
     dist = pillar_dist(p)
-    if dist < 0.10:
+    if dist < 0.02:
         return 'invisible', pr
     inside = half <= u <= W - half and half <= v <= H - half
     if inside and dist > PILLAR[2] + TARGET_HALF:
@@ -80,6 +80,9 @@ class Evaluator(Node):
         self.vis = self.vis_hit = 0
         self.inv = self.inv_fp = 0
         self.amb = 0
+        self.settle_n = self.declare_parameter('settle_frames', 4).value
+        self.settle = 0
+        self.last_def = None
         self.err_sum = 0.0
         self.done = False
         self.create_subscription(PointStamped, '/target_mover/ground_truth',
@@ -98,6 +101,13 @@ class Evaluator(Node):
             return
         kind, pr = classify(self.gt)
         self.frames += 1
+        if kind != 'ambiguous':
+            if kind != self.last_def:
+                self.settle = self.settle_n
+                self.last_def = kind
+            if self.settle > 0:
+                self.settle -= 1
+                kind = 'ambiguous'
         if kind == 'visible':
             self.vis += 1
             if msg.detections:

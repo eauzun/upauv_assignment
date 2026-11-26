@@ -342,8 +342,6 @@ void	RedTargetDetector::_publish(const std_msgs::msg::Header &hdr, cv::Mat &img,
 		out = cands;
 		this->_lastCands = cands;
 	}
-	else if (this->_detected)
-		out = this->_lastCands;
 	w = (double)img.cols;
 	h = (double)img.rows;
 	arr.header = hdr;
