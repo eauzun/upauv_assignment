@@ -194,10 +194,16 @@ Ground truth is the target's world position published by the mover, projected in
 ros2 run up_week2 evaluate.py --ros-args -p lighting:=normal -p frames:=600 -p out_dir:=docs
 ```
 
-| Lighting | Frames | Detection rate (≥ 90 %) | False detection (≤ 5 %) | Mean center error (≤ 10 px) |
+| Run | Frames | Detection rate (≥ 90 %) | False detection (≤ 5 %) | Mean center error (≤ 10 px) |
 | :--- | :--- | :--- | :--- | :--- |
-| normal | TODO | TODO | TODO | TODO |
-| dim | TODO | TODO | TODO | TODO |
+| normal #1 | 600 | 97.2 % | 0.0 % | 0.56 px |
+| normal #2 | 600 | 87.7 % | 0.0 % | 0.57 px |
+| normal #3 | 600 | 90.4 % | 0.0 % | 0.66 px |
+| **normal mean** | | **91.8 %** | **0.0 %** | **0.60 px** |
+| dim #1 | 600 | 84.5 % | 0.0 % | 0.51 px |
+| dim #2 | 600 | 90.2 % | 0.0 % | 0.70 px |
+| dim #3 | 600 | 96.6 % | 0.0 % | 0.46 px |
+| **dim mean** | | **90.4 %** | **0.0 %** | **0.56 px** |
 
 Distractor check with default parameters: the orange cube is not detected. Raising `h1_high` to 25 makes it a false detection (screenshot in `docs/screenshots/`).
 
